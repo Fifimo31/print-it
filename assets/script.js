@@ -33,3 +33,5 @@ for(let i = 0; i<imagesNumber; i++){
 const slide1 = slides[0].image;
 console.log(slide1)
 const tagLine = slides [0].tagLine;
+console.log(tagLine)
+
