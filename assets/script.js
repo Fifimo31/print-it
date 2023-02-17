@@ -20,7 +20,6 @@ const arrowRight = document.querySelector(".arrow_right");
 console.log(arrowRight)
 arrowRight.addEventListener("click", (e) => {
 	console.log(e.target)
-	//const img = e.target;
 })
 const dots = document.querySelector(".dots");
 console.log(dots)
