@@ -34,3 +34,4 @@ console.log(slide1)
 const tagLine = slides [0].tagLine;
 console.log(tagLine)
 
+
