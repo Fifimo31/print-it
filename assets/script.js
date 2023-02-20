@@ -33,5 +33,9 @@ const slide1 = slides[0].image;
 console.log(slide1)
 const tagLine = slides [0].tagLine;
 console.log(tagLine)
+let img = document.createElement('img')
+img.setAttribute('src','./images/slideshow/slide1.jpg');
+document.getElementById('banner').appendChild(img);
+console.log(img)
 
 
