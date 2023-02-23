@@ -26,12 +26,7 @@ arrowRight.addEventListener("click", (e) => {
 	//console.log(e.target)
 	currentImage++;
 	displaySlider(currentImage)
-	if (currentImage.ok){
-		return (img.setAttribute('src', './images/slideshow/slide2.jpg'))
-	}
-	else {
-		return ('afterbegin',`<img src = "./assets/images/slideshow/${slides[numImage].image}">`)
-	}
+	
 })
 
 const arrowLeft = document.querySelector(".arrow_left");
@@ -58,8 +53,14 @@ console.log(tagLine)
 //console.log(img)
 const displaySlider =(numImage=0) => {
 	banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
-	return numImage
+	return numImage;
+	if (currentImage.ok){
+		return (img.setAttribute('src', './images/slideshow/slide2.jpg'))
+	}
+	else {
+		('afterbegin',`<img src = "./assets/images/slideshow/${slides[numImage].image}">`)
+	}
 }
-let currentImage = displaySlider() 
+let currentImage = displaySlider();
 console.log(currentImage)
 
