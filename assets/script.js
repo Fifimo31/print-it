@@ -26,7 +26,20 @@ arrowRight.addEventListener("click", (e) => {
 	//console.log(e.target)
 	currentImage++;
 	displaySlider(currentImage)
+	if (currentImage.ok){
+		return (img.setAttribute('src', './images/slideshow/slide2.jpg'))
+	}
+	else {
+		return ('afterbegin',`<img src = "./assets/images/slideshow/${slides[numImage].image}">`)
+	}
 })
+
+const arrowLeft = document.querySelector(".arrow_left");
+arrowLeft.addEventListener("click", (e)=> {
+	currentImage--;
+	displaySlider(currentImage)
+})
+
 const dots = document.querySelector(".dots");
 console.log(dots)
 const imagesNumber = slides.length;
