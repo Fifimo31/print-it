@@ -53,14 +53,18 @@ console.log(tagLine)
 //console.log(img)
 const displaySlider =(numImage=0) => {
 	banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
-	return numImage;
-	if (currentImage.ok){
-		return (img.setAttribute('src', './images/slideshow/slide2.jpg'))
+	
+	if (imageSlider){
+		(img.setAttribute('src', './images/slideshow/slide2.jpg'))
 	}
 	else {
-		('afterbegin',`<img src = "./assets/images/slideshow/${slides[numImage].image}">`)
+		banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
 	}
+	console.log(imageSlider)
+	return numImage;
+	
 }
+
 let currentImage = displaySlider();
 console.log(currentImage)
 
