@@ -16,12 +16,21 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-console.log(slides[0].image);
 const banner = document.getElementById('banner')
-console.log(slides.length)
-
 const arrowRight = document.querySelector(".arrow_right");
-console.log(arrowRight)
+const arrowLeft = document.querySelector(".arrow_left");
+const dots = document.querySelector(".dots");
+
+const imagesNumber = slides.length;
+
+for(let i = 0; i<imagesNumber; i++){
+	console.log(i)
+	dots.insertAdjacentHTML('beforebegin', '<div class="dot"></div>');
+}
+
+const slide1 = slides[0].image;
+const tagLine = slides [0].tagLine;
+
 arrowRight.addEventListener("click", (e) => {
 	//console.log(e.target)
 	currentImage++;
@@ -29,28 +38,12 @@ arrowRight.addEventListener("click", (e) => {
 	
 })
 
-const arrowLeft = document.querySelector(".arrow_left");
+
 arrowLeft.addEventListener("click", (e)=> {
 	currentImage--;
 	displaySlider(currentImage)
 })
 
-const dots = document.querySelector(".dots");
-console.log(dots)
-const imagesNumber = slides.length;
-console.log(imagesNumber)
-for(let i = 0; i<imagesNumber; i++){
-	console.log(i)
-	dots.insertAdjacentHTML('beforebegin', '<div class="dot"></div>');
-}
-const slide1 = slides[0].image;
-console.log(slide1)
-const tagLine = slides [0].tagLine;
-console.log(tagLine)
-//let img = document.createElement ('img');
-//img.setAttribute('src','./images/slideshow/slide1.jpg');
-//document.getElementById('banner').appendChild(img);
-//console.log(img)
 const displaySlider =(numImage=0) => {
 	banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
 	
@@ -60,11 +53,17 @@ const displaySlider =(numImage=0) => {
 	else {
 		banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
 	}
-	console.log(imageSlider)
 	return numImage;
-	
 }
-
 let currentImage = displaySlider();
 console.log(currentImage)
+
+
+
+//let img = document.createElement ('img');
+//img.setAttribute('src','./images/slideshow/slide1.jpg');
+//document.getElementById('banner').appendChild(img);
+//console.log(img)
+
+
 
