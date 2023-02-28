@@ -58,6 +58,10 @@ const displaySlider =(numImage=0) => {
 let currentImage = displaySlider();
 console.log(currentImage)
 
+for (let i = 0; i<numImage; i++){
+	banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
+}
+
 
 
 //let img = document.createElement ('img');
