@@ -34,6 +34,10 @@ const tagLine = slides [0].tagLine;
 arrowRight.addEventListener("click", (e) => {
 	//console.log(e.target)
 	currentImage++;
+	console.log(currentImage)
+	if(currentImage>= imagesNumber){
+		currentImage=0;
+	}
 	displaySlider(currentImage)
 	
 })
@@ -45,22 +49,21 @@ arrowLeft.addEventListener("click", (e)=> {
 })
 
 const displaySlider =(numImage=0) => {
-	banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
-	
-	if (imageSlider){
-		(img.setAttribute('src', './images/slideshow/slide2.jpg'))
+
+	//savoir si l'élément existe. Si l'élément n'existe pas mettre un !
+	if (!document.querySelector('#img-banner')){
+		
+		banner.insertAdjacentHTML('afterbegin', `<img id="img-banner" src="assets/images/slideshow/${slides[numImage].image}">`)
 	}
 	else {
-		banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
+		
+		banner.firstElementChild.setAttribute('src', `assets/images/slideshow/${slides[numImage].image}`)
 	}
+
 	return numImage;
 }
 let currentImage = displaySlider();
 console.log(currentImage)
-
-for (let i = 0; i<numImage; i++){
-	banner.insertAdjacentHTML('afterbegin', `<img src="./assets/images/slideshow/${slides[numImage].image}">`)
-}
 
 
 
