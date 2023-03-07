@@ -45,7 +45,11 @@ arrowRight.addEventListener("click", (e) => {
 
 arrowLeft.addEventListener("click", (e)=> {
 	currentImage--;
-	displaySlider(currentImage)
+	if(currentImage < 0){
+		currentImage = imagesNumber - 1;
+		}
+		displaySlider(currentImage)
+		
 })
 
 const displaySlider =(numImage=0) => {
@@ -62,8 +66,12 @@ const displaySlider =(numImage=0) => {
 
 	return numImage;
 }
+
+  
 let currentImage = displaySlider();
 console.log(currentImage)
+
+
 
 
 
