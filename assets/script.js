@@ -16,6 +16,7 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
+console.log(slides[2].tagLine)
 const banner = document.getElementById('banner')
 const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
@@ -23,9 +24,10 @@ const dots = document.querySelector(".dots");
 
 const imagesNumber = slides.length;
 
+//création des dots
 for(let i = 0; i<imagesNumber; i++){
 	console.log(i)
-	dots.insertAdjacentHTML('beforebegin', '<div class="dot"></div>');
+	dots.insertAdjacentHTML('afterbegin', '<div class="dot"></div>');
 }
 
 const slide1 = slides[0].image;
@@ -63,6 +65,13 @@ const displaySlider =(numImage=0) => {
 		
 		banner.firstElementChild.setAttribute('src', `assets/images/slideshow/${slides[numImage].image}`)
 	}
+	//tagline
+	const bannerP = banner.querySelector("p");
+	bannerP.innerHTML = slides[numImage].tagLine;
+	//dots
+	//1: cibler les dot avec queryselectorall
+	//2: faire une boucle for ich avec 2 paramettre element et index
+	
 
 	return numImage;
 }
