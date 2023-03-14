@@ -70,24 +70,31 @@ const displaySlider =(numImage=0) => {
 	bannerP.innerHTML = slides[numImage].tagLine;
 	//dots
 	//1: cibler les dot avec queryselectorall
+	const dots = document.querySelectorAll(".dot");
+	
 	//2: faire une boucle for ich avec 2 paramettre element et index
+	
+	dots.forEach((dot, index) => {
+		if (index === numImage) {
+		  dot.classList.add('selected');
+		} else {
+		  dot.classList.remove('selected');
+		}
+	  });
 	
 
 	return numImage;
+	
 }
 
-  
 let currentImage = displaySlider();
-console.log(currentImage)
+console.log(dot, index)
 
 
 
 
 
-//let img = document.createElement ('img');
-//img.setAttribute('src','./images/slideshow/slide1.jpg');
-//document.getElementById('banner').appendChild(img);
-//console.log(img)
+
 
 
 
