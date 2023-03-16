@@ -16,7 +16,7 @@ const slides = [
 		"tagLine":"Autocollants <span>avec découpe laser sur mesure</span>"
 	}
 ]
-console.log(slides[2].tagLine)
+
 const banner = document.getElementById('banner')
 const arrowRight = document.querySelector(".arrow_right");
 const arrowLeft = document.querySelector(".arrow_left");
@@ -85,6 +85,7 @@ const displaySlider =(numImage=0) => {
 }
 
 let currentImage = displaySlider();
+
 
 
 
