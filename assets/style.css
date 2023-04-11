@@ -54,9 +54,6 @@ table {
 	border-spacing: 0;
 }
 
-
-
-
 section {
 	margin-block: 6em;
 }
@@ -114,6 +111,9 @@ header {
 	min-height: 470px;
 	position: relative;
 }
+#img-banner {
+	width: 100%;
+}
 .banner-img {
 	position: absolute;
 	width: 100%;
@@ -129,9 +129,11 @@ header {
 }
 #banner .arrow_left {
 	left: 10px;
+	position: absolute;
 }
 #banner .arrow_right {
 	right: 10px;
+	position: absolute;
 }
 /* Gestion des points du carrousel */
 .dots {
@@ -160,6 +162,7 @@ header {
 	color: white;
 	text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 	text-align: center;
+	position: absolute;
 }
 #banner span {
 	display: block;
