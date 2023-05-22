@@ -17,27 +17,32 @@ const slides = [
 	}
 ]
 
-const banner = document.getElementById('banner')
-const arrowRight = document.querySelector(".arrow_right");
+const banner = document.getElementById('banner')//getElementById permet de selectionner un element par son id
+const arrowRight = document.querySelector(".arrow_right");//querySelector permet de séléctionner des éléments css plus flexible
 const arrowLeft = document.querySelector(".arrow_left");
 const dots = document.querySelector(".dots");
 
-const imagesNumber = slides.length;
+const imagesNumber = slides.length;// slides.length est le nombre d'élément dans le tableau c'est à dire 4 objets
 
 //création des dots
-for(let i = 0; i<imagesNumber; i++){
+for(let i = 0; i<imagesNumber; i++){// for est une boucle. i est le compteur de la boucle au début elle est initialisé a 0. 
+									//Dans ce code la boucle est répété 4 fois car imagesNumber égale à slides.lenght
+									//si la condition est vrai i est augmenter on dit quel est incrémenté
 	console.log(i)
-	dots.insertAdjacentHTML('afterbegin', '<div class="dot"></div>');
+	dots.insertAdjacentHTML('afterbegin', '<div class="dot"></div>');// insertAdjacentHTML est une méthode pour insérer du HTML a un emplacement spécifique à l'intérieur d'un élément existant
+																	//Elle permet d'ajouter du contenue HTML à côté ou à l'intérieur d'un élément cible.
 }
 
-arrowRight.addEventListener("click", (e) => {
+arrowRight.addEventListener("click", (e) => {// l'écouteur d'événement "click" est attaché a la flèche arrowRight grace à addEventListener 
+											//et permet aussi de définir une fonction qui se produira lors du click sur l'élément cible
 	//console.log(e.target)
-	currentImage++;
+	currentImage++;					//variable qui contient displaySlider et qui est incrémenté voir tout en bas du code 
 	console.log(currentImage)
-	if(currentImage>= imagesNumber){
+	if(currentImage>= imagesNumber){// if est une condition si currentImage est supérieur ou égale à imagesNumber alors currentImage retourne a l'image 0 
 		currentImage=0;
 	}
-	displaySlider(currentImage)
+	displaySlider(currentImage) // displaySlider est appelé avec currentImage comme argument pour afficher le contenue du slider
+
 	
 })
 
@@ -51,16 +56,17 @@ arrowLeft.addEventListener("click", (e)=> {
 		
 })
 
-const displaySlider =(numImage=0) => {
+const displaySlider =(numImage=0) => { //fonction qui retourne une image
 
-	//savoir si l'élément existe. Si l'élément n'existe pas mettre un !
-	if (!document.querySelector('#img-banner')){
+	
+	if (!document.querySelector('#img-banner')){// si aucun élément avec l'ID "img-banner" n'existe dans le document. 
 		
-		banner.insertAdjacentHTML('afterbegin', `<img id="img-banner" src="assets/images/slideshow/${slides[numImage].image}">`)
+		banner.insertAdjacentHTML('afterbegin', `<img id="img-banner" src="assets/images/slideshow/${slides[numImage].image}">`)// le code à l'intérieur du bloc if est effectué.
 	}
-	else {
+	else {// sinon
 		
-		banner.firstElementChild.setAttribute('src', `assets/images/slideshow/${slides[numImage].image}`)
+		banner.firstElementChild.setAttribute('src', `assets/images/slideshow/${slides[numImage].image}`)// c'est le première élément enfant de banner 
+																										// avec laquelle on défini la classe src avec setAttribute
 	}
 	//tagline
 	const bannerP = banner.querySelector("p");
