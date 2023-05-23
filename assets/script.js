@@ -41,6 +41,8 @@ const displaySlider =(numImage=0) => { //fonction qui retourne une image
 	if (!document.querySelector('#img-banner')){// si aucun élément avec l'ID "img-banner" n'existe dans le document. 
 		
 		banner.insertAdjacentHTML('afterbegin', `<img id="img-banner" src="assets/images/slideshow/${slides[numImage].image}">`)// le code à l'intérieur du bloc if est effectué.
+																																//on a utiliser la concaténation dans le code html
+
 	}
 	else {// sinon
 		
@@ -56,7 +58,7 @@ const displaySlider =(numImage=0) => { //fonction qui retourne une image
 	console.log(dots)
 	//2: faire une boucle forEach avec 2 paramettre element et index
 	
-	dots.forEach((dot, index) => {
+	dots.forEach((dot, index) => {//La forEach()méthode exécute une fonction fournie une fois pour chaque élément du tableau.
 		if (index === numImage) {//si l'index = à numImage alors il l'exécute
 		  dot.classList.add('dot_selected');// classList.add permet d'ajouter la class dot_selected à l'élément HTML dot
 		} else {// sinon il là suprime
