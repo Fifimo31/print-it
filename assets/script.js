@@ -33,28 +33,7 @@ for(let i = 0; i<imagesNumber; i++){// for est une boucle. i est le compteur de 
 																	//Elle permet d'ajouter du contenue HTML à côté ou à l'intérieur d'un élément cible.
 }
 
-arrowRight.addEventListener("click", (e) => {// l'écouteur d'événement "click" est attaché a la flèche arrowRight grace à addEventListener 
-											//et permet aussi de définir une fonction qui se produira lors du click sur l'élément cible
-	//console.log(e.target)
-	currentImage++;					//variable qui contient displaySlider et qui est incrémenté voir tout en bas du code 
-	console.log(currentImage)
-	if(currentImage>= imagesNumber){// if est une condition si currentImage est supérieur ou égale à imagesNumber alors currentImage retourne a l'image 0 
-		currentImage=0;
-	}
-	displaySlider(currentImage) // displaySlider est appelé avec currentImage comme argument pour afficher le contenue du slider
 
-	
-})
-
-
-arrowLeft.addEventListener("click", (e)=> {
-	currentImage--;
-	if(currentImage < 0){
-		currentImage = imagesNumber - 1;
-		}
-		displaySlider(currentImage)
-		
-})
 
 const displaySlider =(numImage=0) => { //fonction qui retourne une image
 
@@ -70,29 +49,50 @@ const displaySlider =(numImage=0) => { //fonction qui retourne une image
 	}
 	//tagline
 	const bannerP = banner.querySelector("p");
-	bannerP.innerHTML = slides[numImage].tagLine;
+	bannerP.innerHTML = slides[numImage].tagLine;// innerHTML permet d'accéder au tagline 
 	//dots
 	//1: cibler les dot avec queryselectorall
-	const dots = document.querySelectorAll(".dot");
+	const dots = document.querySelectorAll(".dot");//querySelectorAll permet de séléctionner les 4 dot
 	console.log(dots)
-	//2: faire une boucle for ich avec 2 paramettre element et index
+	//2: faire une boucle forEach avec 2 paramettre element et index
 	
 	dots.forEach((dot, index) => {
-		if (index === numImage) {
-		  dot.classList.add('dot_selected');
-		} else {
-		  dot.classList.remove('dot_selected');
+		if (index === numImage) {//si l'index = à numImage alors il l'exécute
+		  dot.classList.add('dot_selected');// classList.add permet d'ajouter la class dot_selected à l'élément HTML dot
+		} else {// sinon il là suprime
+		  dot.classList.remove('dot_selected');// classList.remove  permet de suprimer des class
 		}
 	  });
 	
 
-	return numImage;
+	return numImage; // return permet de voir le résultat
 	
 }
 
-let currentImage = displaySlider();
+let currentImage = displaySlider();//currentImage est initializé comme étant la première diapositive et displaySlider permet d'afficher cette diapositive
+
+arrowRight.addEventListener("click", (e) => {// l'écouteur d'événement "click" est attaché a la flèche arrowRight grace à addEventListener 
+	//et permet aussi de définir une fonction qui se produira lors du click sur l'élément cible
+//console.log(e.target)
+currentImage++;					//variable qui contient displaySlider et qui est incrémenté voir tout en bas du code 
+console.log(currentImage)
+if(currentImage>= imagesNumber){// if est une condition si currentImage est supérieur ou égale à imagesNumber alors currentImage retourne a l'image 0 
+currentImage=0;
+}
+displaySlider(currentImage) // displaySlider est appelé avec currentImage comme argument pour afficher le contenue du slider
 
 
+})
+
+
+arrowLeft.addEventListener("click", (e)=> {
+currentImage--;
+if(currentImage < 0){
+currentImage = imagesNumber - 1;
+}
+displaySlider(currentImage)
+
+})
 
 
 
