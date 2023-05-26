@@ -40,18 +40,18 @@ const displaySlider =(numImage=0) => { //fonction qui retourne une image
 	
 	if (!document.querySelector('#img-banner')){// si aucun élément avec l'ID "img-banner" n'existe dans le document. 
 		
-		banner.insertAdjacentHTML('afterbegin', `<img id="img-banner" src="assets/images/slideshow/${slides[numImage].image}">`)// le code à l'intérieur du bloc if est effectué.
+		banner.insertAdjacentHTML('afterbegin', `<img id="img-banner" src="assets/images/slideshow/${slides[numImage].image}">`)// ça permet d'injecter du code html on peut l'injcter à l'intérrieur ou au début ou a la fin
 																																//on a utiliser la concaténation dans le code html
 
 	}
 	else {// sinon
 		
 		banner.firstElementChild.setAttribute('src', `assets/images/slideshow/${slides[numImage].image}`)// c'est le première élément enfant de banner 
-																										// avec laquelle on défini la classe src avec setAttribute
+																										// setAttribute permet de modifier la valeur de l'attribet d'un élément html
 	}
 	//tagline
-	const bannerP = banner.querySelector("p");
-	bannerP.innerHTML = slides[numImage].tagLine;// innerHTML permet d'accéder au tagline 
+	const bannerP = banner.querySelector("p"); // pourquoi banner.querySelector et non document.querySelector ???????
+	bannerP.innerHTML = slides[numImage].tagLine;// innerHTML permet récuperer le contenue d'une balise ou de le remplacer son contenue
 	//dots
 	//1: cibler les dot avec queryselectorall
 	const dots = document.querySelectorAll(".dot");//querySelectorAll permet de séléctionner les 4 dot
