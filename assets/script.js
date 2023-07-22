@@ -47,7 +47,7 @@ const displaySlider =(numImage=0) => { //fonction qui retourne une image
 	else {// sinon
 		
 		banner.firstElementChild.setAttribute('src', `assets/images/slideshow/${slides[numImage].image}`)// c'est le première élément enfant de banner 
-																										// setAttribute permet de modifier la valeur de l'attribet d'un élément html
+																										// setAttribute permet de modifier la valeur de l'attribut d'un élément html
 	}
 	//tagline
 	const bannerP = banner.querySelector("p"); // pourquoi banner.querySelector et non document.querySelector ???????
