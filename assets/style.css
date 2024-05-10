@@ -91,6 +91,11 @@ header {
 }
 
 .btn {
+	
+	text-decoration: none;
+}
+
+header .btn {
 	background-color: var(--primary-color) ;
 	padding: 16px 32px;
 	margin-inline:5px;
@@ -108,7 +113,7 @@ header {
 	align-items: center;
 	justify-content: center;
 	width: 100%;
-	min-height: 470px;
+	height: 100%;
 	position: relative;
 }
 #img-banner {
@@ -128,11 +133,11 @@ header {
 	position: absolute;
 }
 #banner .arrow_left {
-	left: 10px;
+	left: 3%;
 	position: absolute;
 }
 #banner .arrow_right {
-	right: 10px;
+	right: 3%;
 	position: absolute;
 }
 /* Gestion des points du carrousel */
@@ -264,7 +269,7 @@ header {
 	margin-top: 0;
 	background: url("./images/tricolor-icon.png") no-repeat left top;
 	padding-left:1.5em;
-	width: 200px;
+	width: 100%;
 }
 .inline-icon {
 	vertical-align: middle;
@@ -297,5 +302,62 @@ footer div {
 @media all and (max-width: 1250px) {
 	#contact > article {
 		flex: 2;
+	}
+}
+
+@media all and (max-width: 992px){
+	img {
+		width: 100%;
+	}
+	.arrow_left {
+		width: 5%;
+	}
+	.arrow_right{
+		width: 5%;
+	}
+	#contact article, #contact div {
+		display: flex;
+		flex-direction: column;
+	}
+	#banner p {
+		font-size: 30px;
+	}
+	#banner .arrow_left {
+		left: 4%;
+	}
+	#banner .arrow_right {
+		right: 4%;
+	}
+	#img-banner{
+		height: 230px;
+	}
+	.dots{
+		bottom: 0px;
+	}
+	#products {
+		flex-direction: column;
+	}
+	#about-us {
+		flex-direction: column;
+	}
+	#why-us > div {
+		flex-direction: column;
+		align-items: center;
+	}
+	#contact .container {
+		align-items: center;
+		flex-direction: column-reverse;
+	}
+	.inline-icon {
+		width: 5%;
+	}
+	footer {
+		flex-direction: column;
+	}
+	footer div {
+		margin: 20px;
+	}
+	.imgMetro img{
+		width: 5%;
 	}
 }
