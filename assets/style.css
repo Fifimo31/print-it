@@ -361,3 +361,11 @@ footer div {
 		width: 5%;
 	}
 }
+@media all and (max-width: 796px){
+	#banner p {
+		font-size: 25px;
+	}
+	#banner span {
+		font-size: 25px;
+	}
+}
