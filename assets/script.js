@@ -1,7 +1,7 @@
 const slides = [
 	{
 		"image":"slide1.jpg",
-		"tagLine":"Impressions tous formats <span>en boutique et en ligne</span>"
+		"tagLine":"Impressions tous formats <span>boutique et en ligne</span>"
 	},
 	{
 		"image":"slide2.jpg",
